@@ -7,6 +7,8 @@ const insertProduct = require("./Api/Admin/Products/insertProduct");
 const insertProducts = require("./Api/Admin/Products/insertProducts");
 const fetchAllCategories = require("./Api/User/Category/fetchAllCategories");
 const fetchAllProducts = require("./Api/User/Products/fetchAllProducts");
+const fetchProductsByCategory = require("./Api/User/Category/fetchProductsByCategory");
+const fetchProductById = require("./Api/User/Products/fetchProductsById");
 require("dotenv").config();
 
 const app = express();
@@ -43,6 +45,8 @@ app.get("/", (req, res) => {
 
 app.get("/products", fetchAllProducts);
 app.get("/categories", fetchAllCategories);
+app.get("/category/:category_id", fetchProductsByCategory);
+app.get("/products/:product_id", fetchProductById);
 
 // admin
 app.post("/insertProducts", insertProducts);
