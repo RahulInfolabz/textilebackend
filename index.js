@@ -35,8 +35,8 @@ app.get("/", (req, res) => {
     success: true,
     message: "Server Started",
     apis: {
-      products: "",
-      categories: "",
+      products: "https://textilebackend.onrender.com/products",
+      categories: "https://textilebackend.onrender.com/categories",
     },
   });
 });
