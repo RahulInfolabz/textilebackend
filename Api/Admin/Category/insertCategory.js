@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const connectDb = require("../../../Db/connectDb");
 
 async function insertCategory(req, res) {
@@ -12,7 +13,7 @@ async function insertCategory(req, res) {
 
     // write here query
     const insert = await collection.insertOne({
-      category_id,
+      category_id: ObjectId.createFromHexString(category_id),
       name,
       image,
       description,
