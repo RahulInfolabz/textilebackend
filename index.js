@@ -10,6 +10,7 @@ const fetchAllProducts = require("./Api/User/Products/fetchAllProducts");
 const fetchProductsByCategory = require("./Api/User/Category/fetchProductsByCategory");
 const fetchProductById = require("./Api/User/Products/fetchProductsById");
 const updateProductsCategory = require("./Api/User/Category/updateProductsCategory");
+const { SearchProducts } = require("./Api/User/Products/searchProducts");
 require("dotenv").config();
 
 const app = express();
@@ -48,6 +49,7 @@ app.get("/products", fetchAllProducts);
 app.get("/categories", fetchAllCategories);
 app.get("/category/:category_id", fetchProductsByCategory);
 app.get("/products/:product_id", fetchProductById);
+app.get("/search", SearchProducts);
 
 app.post("/updateProductCategory", updateProductsCategory);
 

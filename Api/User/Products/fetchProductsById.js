@@ -22,7 +22,7 @@ async function fetchProductById(req, res) {
 
     // Query to find the product by _id
     const product = await collection.findOne({
-      _id: new ObjectId(product_id),
+      _id: ObjectId.createFromHexString(product_id),
     });
 
     // Check if the product exists
