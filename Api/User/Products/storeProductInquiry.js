@@ -11,7 +11,7 @@ async function AddProductInquiry(req, res) {
     if (
       !productId ||
       !username ||
-      !email || 
+      !email ||
       !phone ||
       !message ||
       !qty ||
@@ -35,7 +35,9 @@ async function AddProductInquiry(req, res) {
       timestamp: new Date(),
     });
 
-    return res.status(201).json({ message: "Contact Inquiry Submitted" });
+    return res
+      .status(201)
+      .json({ success: true, message: "Product Inquiry Submitted" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: error.message });
