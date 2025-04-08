@@ -12,6 +12,9 @@ const fetchProductById = require("./Api/User/Products/fetchProductsById");
 const updateProductsCategory = require("./Api/User/Category/updateProductsCategory");
 const { SearchProducts } = require("./Api/User/Products/searchProducts");
 const { AddContactInquiry } = require("./Api/User/Products/storeContactUs");
+const {
+  AddProductInquiry,
+} = require("./Api/User/Products/storeProductInquiry");
 require("dotenv").config();
 
 const app = express();
@@ -54,6 +57,7 @@ app.get("/search", SearchProducts);
 
 app.post("/updateProductCategory", updateProductsCategory);
 app.post("/storeContactInquiry", AddContactInquiry);
+app.post("/storeProductInquiry", AddProductInquiry);
 
 // admin
 app.post("/insertProducts", insertProducts);
