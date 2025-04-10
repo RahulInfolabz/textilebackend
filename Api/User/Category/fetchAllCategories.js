@@ -9,7 +9,7 @@ async function fetchAllCategories(req, res) {
     const collection = db.collection("categories");
 
     // write here query
-    const categories = await collection.find().toArray();
+    const categories = await collection.find({ status: "active" }).toArray();
 
     if (categories.length > 0) {
       console.log("Data Found!");
