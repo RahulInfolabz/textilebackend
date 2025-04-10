@@ -9,7 +9,7 @@ async function fetchAllProducts(req, res) {
     const collection = db.collection("products");
 
     // write here query
-    const products = await collection.find().toArray();
+    const products = await collection.find({ status: "active" }).toArray();
 
     if (products.length > 0) {
       console.log("Data Found!");
